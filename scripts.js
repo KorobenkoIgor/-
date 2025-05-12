@@ -1,75 +1,55 @@
-/* Общие стили для всей страницы */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
+document.addEventListener('DOMContentLoaded', function() {
+  // Инициализация глав
+  let currentChapter = 1;
+  const chapters = document.querySelectorAll('.chapter');
 
-.container {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
+  // Функция для обновления глав
+  function updateChapter() {
+    // Скрыть все главы
+    chapters.forEach(chapter => {
+      chapter.style.display = 'none';
+    });
 
-.book {
-  width: 60%;
-  background-color: white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  border-radius: 8px;
-}
+    // Показать текущую главу
+    document.getElementById('chapter' + currentChapter).style.display = 'block';
+  }
 
-.header h1 {
-  text-align: center;
-  font-size: 2.5em;
-}
+  // Функция для создания кнопок
+  function createNavigationButtons() {
+    const navigationDiv = document.createElement('div');
+    navigationDiv.classList.add('navigation');
+    
+    // Кнопка "Предыдущая глава"
+    const prevBtn = document.createElement('button');
+    prevBtn.id = 'prevBtn';
+    prevBtn.textContent = 'Предыдущая глава';
+    prevBtn.addEventListener('click', function() {
+      if (currentChapter > 1) {
+        currentChapter--;
+        updateChapter();
+      }
+    });
 
-.header h3 {
-  text-align: center;
-  font-size: 1.2em;
-  color: #666;
-}
+    // Кнопка "Следующая глава"
+    const nextBtn = document.createElement('button');
+    nextBtn.id = 'nextBtn';
+    nextBtn.textContent = 'Следующая глава';
+    nextBtn.addEventListener('click', function() {
+      if (currentChapter < chapters.length) {
+        currentChapter++;
+        updateChapter();
+      }
+    });
 
-.chapter {
-  display: none; /* Главы скрыты по умолчанию */
-  margin-bottom: 30px;
-}
+    // Добавляем кнопки в блок
+    navigationDiv.appendChild(prevBtn);
+    navigationDiv.appendChild(nextBtn);
 
-.chapter h2 {
-  color: #333;
-  font-size: 1.8em;
-}
+    // Добавляем блок с кнопками в контейнер
+    document.querySelector('.book').appendChild(navigationDiv);
+  }
 
-.chapter p {
-  line-height: 1.6;
-  font-size: 1.1em;
-  color: #555;
-}
-
-/* Стили для кнопок навигации */
-button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-}
-
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
+  // Инициализация: создание кнопок и показ первой главы
+  createNavigationButtons();
+  updateChapter();
+});
