@@ -48,12 +48,6 @@ body {
 }
 
 /* Стили для кнопок навигации */
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
 button {
   background-color: #007bff;
   color: white;
@@ -72,4 +66,10 @@ button:hover {
 button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
