@@ -32,6 +32,7 @@ body {
 }
 
 .chapter {
+  display: none; /* Главы скрыты по умолчанию */
   margin-bottom: 30px;
 }
 
@@ -46,9 +47,11 @@ body {
   color: #555;
 }
 
+/* Стили для кнопок навигации */
 .navigation {
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 }
 
 button {
@@ -63,4 +66,9 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
