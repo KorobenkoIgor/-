@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Электронная книга: Романтика</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      height: 100vh;
+      background-color: #f9f9f9;
+    }
+    .sidebar {
+      width: 300px;
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .chapter-link {
+      display: block;
+      margin: 8px 0;
+      padding: 10px;
+      background-color: #34495e;
+      border: none;
+      color: white;
+      text-align: left;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    .chapter-link:hover {
+      background-color: #1abc9c;
+    }
+    .content {
+      flex: 1;
+      padding: 30px;
+      overflow-y: auto;
+      background-color: white;
+    }
+    .chapter {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Содержание</h2>
+    <button class="chapter-link" onclick="showChapter(1)">1. Неожиданная встреча</button>
+<button class="chapter-link" onclick="showChapter(2)">2. Симпатия Марка к Микки</button>
+<button class="chapter-link" onclick="showChapter(3)">3. Не взаимная симпатия</button>
+<button class="chapter-link" onclick="showChapter(4)">4. Рассказ про трагическое детство Мии</button>
+<button class="chapter-link" onclick="showChapter(5)">5. Абьюзивные отношения Тима и Мишель</button>
+<button class="chapter-link" onclick="showChapter(6)">6. Травмы, которые нанесла Мия</button>
+<button class="chapter-link" onclick="showChapter(7)">7. Парочка Алекс и Микки</button>
+<button class="chapter-link" onclick="showChapter(8)">8. Ссоры в компании</button>
+<button class="chapter-link" onclick="showChapter(9)">9. Поддержка Тима в сторону Мии</button>
+<button class="chapter-link" onclick="showChapter(10)">10. Алекс уезжает</button>
+<button class="chapter-link" onclick="showChapter(11)">11. Переезд Мии</button>
+<button class="chapter-link" onclick="showChapter(12)">12. Тим и Мишель живут вместе до приезда Тима и Мии</button>
+<button class="chapter-link" onclick="showChapter(13)">13. Интимные отношения Тима и Мишель</button>
+<button class="chapter-link" onclick="showChapter(14)">14. Мия и Алекс приезжают</button>
+<button class="chapter-link" onclick="showChapter(15)">15. Тайна Тима и Мишель</button>
+<button class="chapter-link" onclick="showChapter(16)">16. Появление Марка, который влюбляется снова в Микки</button>
+<button class="chapter-link" onclick="showChapter(17)">17. Микки решает дать шанс Марку</button>
+<button class="chapter-link" onclick="showChapter(18)">18. Они встречаются и у них всё хорошо</button>
+<button class="chapter-link" onclick="showChapter(19)">19. Алекс и Мия узнают про измену</button>
+<button class="chapter-link" onclick="showChapter(20)">20. Они расстаются и начинают общаться между собой</button>
+<button class="chapter-link" onclick="showChapter(21)">21. Мия и Алекс начали встречаться</button>
+<button class="chapter-link" onclick="showChapter(22)">22. Мишель и Тим тоже начали встречаться</button>
+<button class="chapter-link" onclick="showChapter(23)">23. Разъезд по разным городам всех пар</button>
+<button class="chapter-link" onclick="showChapter(24)">24. Встреча через 10 лет</button>
+<button class="chapter-link" onclick="showChapter(25)">25. Забытие всех ссор и проблем</button>
+<button class="chapter-link" onclick="showChapter(26)">26. Конец</button>
+
+  </div>
+  <div class="content" id="contentArea">
+    <p>Выберите главу из списка слева, чтобы прочитать.</p>
+    
+    <div class="chapter" id="chapter1" style="display: none;">
+      <h2>1. Неожиданная встреча</h2>
+      <p>Микки случайно сталкивается с Алексом в книжном магазине. Между ними сразу пробегает искра.</p>
+    </div>
+    
+    <div class="chapter" id="chapter2" style="display: none;">
+      <h2>2. Симпатия Марка к Микки</h2>
+      <p>Марк знакомится с Микки и проявляет к ней интерес. Он старается быть рядом как можно чаще.</p>
+    </div>
+    
+    <div class="chapter" id="chapter3" style="display: none;">
+      <h2>3. Не взаимная симпатия</h2>
+      <p>Но Микки не отвечает Марку взаимностью — её сердце всё ещё принадлежит Алексу.</p>
+    </div>
+    
+    <div class="chapter" id="chapter4" style="display: none;">
+      <h2>4. Рассказ про трагическое детство Мии</h2>
+      <p>Мия делится с Микки своей трагической историей: потеря родителей, жизнь в интернате и одиночество.</p>
+    </div>
+    
+    <div class="chapter" id="chapter5" style="display: none;">
+      <h2>5. Абьюзивные отношения Тима и Мишель</h2>
+      <p>Тим становится всё более контролирующим и агрессивным по отношению к Мишель.</p>
+    </div>
+    
+    <div class="chapter" id="chapter6" style="display: none;">
+      <h2>6. Травмы, которые нанесла Мия</h2>
+      <p>Мия, страдая от прошлых травм, неосознанно причиняет боль другим, включая Микки и Марка.</p>
+    </div>
+    
+    <div class="chapter" id="chapter7" style="display: none;">
+      <h2>7. Парочка Алекс и Микки</h2>
+      <p>Алекс и Микки сближаются, становятся парой. Их чувства крепнут с каждым днём.</p>
+    </div>
+    
+    <div class="chapter" id="chapter8" style="display: none;">
+      <h2>8. Ссоры в компании</h2>
+      <p>Внутри компании начинаются ссоры: ревность, недопонимание, обиды.</p>
+    </div>
+    
+    <div class="chapter" id="chapter9" style="display: none;">
+      <h2>9. Поддержка Тима в сторону Мии</h2>
+      <p>Тим неожиданно поддерживает Мию в сложной ситуации, чем удивляет всех.</p>
+    </div>
+    
+    <div class="chapter" id="chapter10" style="display: none;">
+      <h2>10. Алекс уезжает</h2>
+      <p>Алекс получает предложение учиться за границей и уезжает на год.</p>
+    </div>
+    
+    <div class="chapter" id="chapter11" style="display: none;">
+      <h2>11. Переезд Мии</h2>
+      <p>Мия переезжает в другой город, чтобы начать новую жизнь и забыть прошлое.</p>
+    </div>
+    
+    <div class="chapter" id="chapter12" style="display: none;">
+      <h2>12. Тим и Мишель живут вместе до приезда Тима и Мии</h2>
+      <p>Тим и Мишель продолжают жить вместе, хоть их отношения остаются напряжёнными.</p>
+    </div>
+    
+    <div class="chapter" id="chapter13" style="display: none;">
+      <h2>13. Интимные отношения Тима и Мишель</h2>
+      <p>Однажды между Тимом и Мишель случается интим. Это меняет их отношения.</p>
+    </div>
+    
+    <div class="chapter" id="chapter14" style="display: none;">
+      <h2>14. Мия и Алекс приезжают</h2>
+      <p>Мия и Алекс возвращаются в город почти одновременно.</p>
+    </div>
+    
+    <div class="chapter" id="chapter15" style="display: none;">
+      <h2>15. Тайна Тима и Мишель</h2>
+      <p>Оказывается, Тим и Мишель скрывают от всех свой роман и совместную жизнь.</p>
+    </div>
+    
+    <div class="chapter" id="chapter16" style="display: none;">
+      <h2>16. Появление Марка, который влюбляется снова в Микки</h2>
+      <p>Марк снова появляется в жизни Микки и понимает, что всё ещё её любит.</p>
+    </div>
+    
+    <div class="chapter" id="chapter17" style="display: none;">
+      <h2>17. Микки решает дать шанс Марку</h2>
+      <p>Микки решает попробовать начать отношения с Марком, дать шанс чему-то новому.</p>
+    </div>
+    
+    <div class="chapter" id="chapter18" style="display: none;">
+      <h2>18. Они встречаются и у них всё хорошо</h2>
+      <p>Они начинают встречаться. Всё складывается легко, спокойно и без драмы.</p>
+    </div>
+    
+    <div class="chapter" id="chapter19" style="display: none;">
+      <h2>19. Алекс и Мия узнают про измену</h2>
+      <p>Алекс и Мия узнают о новом романе. Это больно, особенно для Алекса.</p>
+    </div>
+    
+    <div class="chapter" id="chapter20" style="display: none;">
+      <h2>20. Они расстаются и начинают общаться между собой</h2>
+      <p>Со временем Алекс и Мия сближаются. Они находят утешение друг в друге.</p>
+    </div>
+    
+    <div class="chapter" id="chapter21" style="display: none;">
+      <h2>21. Мия и Алекс начали встречаться</h2>
+      <p>Мия и Алекс начинают встречаться. Их отношения развиваются медленно, но стабильно.</p>
+    </div>
+    
+    <div class="chapter" id="chapter22" style="display: none;">
+      <h2>22. Мишель и Тим тоже начали встречаться</h2>
+      <p>Мишель и Тим осознают, что любят друг друга, и начинают серьёзные отношения.</p>
+    </div>
+    
+    <div class="chapter" id="chapter23" style="display: none;">
+      <h2>23. Разъезд по разным городам всех пар</h2>
+      <p>Каждая пара уезжает в свой город: кто по работе, кто по учёбе, кто в поисках себя.</p>
+    </div>
+    
+    <div class="chapter" id="chapter24" style="display: none;">
+      <h2>24. Встреча через 10 лет</h2>
+      <p>Через десять лет судьба снова сводит всех в одном месте — на свадьбе общих друзей.</p>
+    </div>
+    
+    <div class="chapter" id="chapter25" style="display: none;">
+      <h2>25. Забытие всех ссор и проблем</h2>
+      <p>Прошлые обиды забыты. Все рады видеть друг друга снова, уже взрослыми и мудрыми.</p>
+    </div>
+    
+    <div class="chapter" id="chapter26" style="display: none;">
+      <h2>26. Конец</h2>
+      <p>Каждый находит своё счастье. История заканчивается не сказкой, но жизнью, где царит принятие и любовь.</p>
+    </div>
+    
+  </div>
+
+  <script>
+    function showChapter(num) {
+      var chapters = document.querySelectorAll('.chapter');
+      chapters.forEach(c => c.style.display = 'none');
+      var selected = document.getElementById('chapter' + num);
+      if (selected) {
+        selected.style.display = 'block';
+        window.scrollTo(0, 0);
+      }
+    }
+  </script>
+</body>
+</html>
